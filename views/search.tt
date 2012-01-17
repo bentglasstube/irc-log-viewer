@@ -1,0 +1,6 @@
+[% foreach line in log %]
+  <p>
+    [<a href="/[% line.d %]#[% line.t %]">[% line.d %] [% line.t %]</a>]
+    [% line.m %]
+  </p>
+[% end %]
