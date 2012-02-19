@@ -30,7 +30,9 @@ sub get_log {
 
   my @lines = ();
 
-  open my $file, '<', "data/$year-$month-$day.log" or return [];
+  my $data_dir = config->{data_dir};
+
+  open my $file, '<', "$data_dir/$year-$month-$day.log" or return [];
   push @lines, parse_line $_ while <$file>;
   close $file;
 
@@ -49,10 +51,10 @@ sub search_logs {
   }
 
   unless ($pid) {
-    exec 'grep', '-i', $query, '-r', 'data' or error "Couldn't exec: $!";
+    exec 'grep', '-i', $query, '-r', config->{data_dir} or error "Couldn't exec: $!";
   } else {
     while (<$child>) {
-      my ($date, $line) = (m|^data/(\d{4}-\d{2}-\d{2})\.log:(.*)|);
+      my ($date, $line) = (m|/(\d{4}-\d{2}-\d{2})\.log:(.*)|);
 
       my $entry = parse_line $line;
       ($entry->{d} = $date) =~ s|-|/|g;
