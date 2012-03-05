@@ -7,4 +7,4 @@ engines:
     encoding:  'utf8'
     start_tag: '[%'
     end_tag:   '%]'
-
+data_dir: /var/sites/irc.eatabrick.org/data
