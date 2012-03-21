@@ -20,7 +20,7 @@ sub parse_line {
   $line = irc_to_html($line, invert => 'italic');
 
   # make urls links
-  $line =~ s|(\b[\w-]+://[^<>]+\b)|<a href="$1">$1</a>|g;
+  $line =~ s|(\b[\w-]+://[^<>\s]+\b)|<a href="$1">$1</a>|g;
 
   return { t => $time, m => $line };
 }
