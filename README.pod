@@ -1,0 +1,11 @@
+=head1 NAME
+
+irc-log-viewer - a web app for viewing and searching irc logs
+
+=head1 AUTHOR
+
+Alan Berndt <alan@eatabrick.org>
+
+=head1 LICENSE
+
+See LICENSE for license details.
