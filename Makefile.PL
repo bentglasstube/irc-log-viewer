@@ -12,9 +12,10 @@ WriteMakefile(
       : ()),
     PL_FILES            => {},
     PREREQ_PM => {
-        'Test::More' => 0,
-        'YAML'       => 0,
-        'Dancer'     => 1.3091,
+        'Test::More'            => 0,
+        'YAML'                  => 0,
+        'Dancer'                => 1.3091,
+        'IRC::Formatting::HTML' => 0,
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'IRCLogViewer-*' },
