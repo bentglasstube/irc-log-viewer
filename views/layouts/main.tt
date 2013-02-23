@@ -1,35 +1,19 @@
 <!doctype html>
 <html>
   <head>
-    <title>#eatabrick log viewer</title>
-    <link rel="stylesheet" href="/style.css">
-    <script type="text/javascript" src="/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="/jquery-ui-1.8.17.min.js"></script>
-    <script type="text/javascript">
-      $(function() {
-        // Set up date picker
-        $('#d').datepicker({ dateFormat: 'yy/mm/dd' });
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="logs from #eatabrick on freenode">
 
-        // Handle date form
-        $('#date').submit(function() {
-          window.location = '/' + $('#d').val();
-          return false;
-        });
-      });
-    </script>
+    <title>#eatabrick log viewer</title>
+
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
     <header>
-      <a href="/">#eatabrick log viewer</a>
-      <form id="date" method="get" action="/">
-        <label for="d">date:</label>
-        <input id="d" name="d" value="[% date %]" size="10">
-        <input type="submit" value="go">
-      </form>
+      <a href="/">#eatabrick</a>
       <form method="get" action="/search">
-        <label for="q">search:</label>
-        <input id="q" name="query" value="[% query %]" size="10">
-        <input type="submit" value="go">
+        <input name="query" placeholder="search">
       </form>
     </header>
     <div id="content">
